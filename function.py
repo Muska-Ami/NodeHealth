@@ -42,6 +42,7 @@ def test_proxies():
         resp = requests.get(f"{clash_api}/providers/proxies")
         data = resp.json()['providers']['自动选择']['proxies']
         resp.close()
+        fail_node.clear()
         for i in range(len(data)):
             node_name = data[i]['name']
             delay1 = data[i]['history'][0]['delay']
